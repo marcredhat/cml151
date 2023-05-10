@@ -1,14 +1,15 @@
-"""We'll use a small dataset (100 samples) to validate that the flow works locally.
-This workflow takes about 7 minutes on a Mac, of which 6 minutes are training.
+#Source: https://github.com/chiphuyen/metaflow-transformers-tutorials
+#"""We'll use a small dataset (100 samples) to validate that the flow works locally.
+#This workflow takes about 7 minutes on a Mac, of which 6 minutes are training.
 
-Without Metaflow, we have a few problems:
-1. If we want to run the code on AWS, we'll have to create containers
-2. Have to explicitly save model/tokenizer and load them again for prediction
-(see sent_analysis_predict.py)
+#Without Metaflow, we have a few problems:
+#1. If we want to run the code on AWS, we'll have to create containers
+#2. Have to explicitly save model/tokenizer and load them again for prediction
+#(see sent_analysis_predict.py)
 
-When the model is training, let's show how to convert this to Metaflow.
-(see sent_analysis_metaflow.py)
-"""
+#When the model is training, let's show how to convert this to Metaflow.
+#(see sent_analysis_metaflow.py)
+#"""
 
 import torch
 
