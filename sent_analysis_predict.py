@@ -1,3 +1,4 @@
+#Source: https://github.com/chiphuyen/metaflow-transformers-tutorials
 import torch
 
 from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassification
