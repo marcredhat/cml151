@@ -70,7 +70,8 @@ deeplake_loader = dsmarc7.pytorch(num_workers=0, batch_size=1, transform={
                         'images': tform, 'labels': None}, shuffle=True)
 
 
-net = models.resnet18(pretrained=False)
+net = models.resnet18(weights='ResNet18_Weights.DEFAULT')
+
 net.fc = torch.nn.Linear(net.fc.in_features, len(dsmarc7.labels.info.class_names))
 
 criterion = torch.nn.CrossEntropyLoss()
