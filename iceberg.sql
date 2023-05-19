@@ -93,14 +93,19 @@ select * from default.flights_iceberg.history
 select * from default.flights_iceberg.snapshots
 
 select year, month, count(*) from flights_iceberg
-for system_time as of '2023-05-18 06:32:42.696 Etc/UTC'
-where year = 2006  and deptime='1145'
+for system_time as of '2023-05-18 05:19:30.602 Etc/UTC'
+where year = 2006 and month = 12
 group by year, month
 order by year desc
-
 
 select year, month, count(*) from flights_iceberg
-for system_time as of '2023-05-18 06:32:42.696 Etc/UTC'
-where year = 2006 and deptime='1146'
+where year = 2006 and month = 12
 group by year, month
 order by year desc
+
+#return 0 records
+select * from default.flights_iceberg where deptime='1145' and year='2006'
+
+ALTER TABLE flights_iceberg EXECUTE rollback('2023-05-18 06:32:42.696 Etc/UTC')
+
+select * from default.flights_iceberg where deptime='1145' and year='2006'
