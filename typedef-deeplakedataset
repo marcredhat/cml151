@@ -1,9 +1,9 @@
 {
   "classificationDefs": [
-    {"category": "CLASSIFICATION", "name": "news", "description": "Used for classifying a news type of feed", "typeVersion": "1.0", "attributeDefs": [], "superTypes": [] } ,
+    {"category": "CLASSIFICATION", "name": "SensitiveDeepLakeDataSet", "description": "Used for classifying Deep Lake Data Sets", "typeVersion": "1.0", "attributeDefs": [], "superTypes": [] } ,
     {
       "category": "CLASSIFICATION",
-      "name": "customer_PII",
+      "name": "customer_PII_Marc",
       "description": "Used for classifying a data which contains customer personal information, hence indicating confidential private",
       "typeVersion": "1.0",
       "attributeDefs": [],
@@ -11,7 +11,7 @@
     },
     {
       "category": "CLASSIFICATION",
-      "name": "customer_NON_PII",
+      "name": "customer_NON_PII_Marc",
       "description": "Used for classifying a data which contains customer non personal information, hence indicating confidential lesser than private",
       "typeVersion": "1.0",
       "attributeDefs": [],
@@ -19,7 +19,7 @@
     },
     {
       "category": "CLASSIFICATION",
-      "name": "social",
+      "name": "social_marc",
       "description": "Used for classifying a data which contains data obtained from social media like facebook, twitter",
       "typeVersion": "1.0",
       "attributeDefs": [],
@@ -29,7 +29,7 @@
   "structDefs": [
     {
       "category": "STRUCT",
-      "name": "schema_col",
+      "name": "schema_col_marc",
       "description": "column definition for schema",
       "typeVersion": "1.0",
       "attributeDefs": [
@@ -71,7 +71,7 @@
     {
       "superTypes" : [ "DataSet" ],
       "category" : "ENTITY",
-      "name" : "DeepLakeDataSet",
+      "name" : "MarcDeepLakeDataSet",
       "description" : "a type definition for a file which contains data, this could a file that needs to be processed or it can be an output (ex: extracts)",
       "typeVersion" : "1.0",
       "attributeDefs" : [
@@ -147,8 +147,8 @@
         }
       ,{
           "name" : "server",
-          "typeName" : "server",
-          "isOptional" : false,
+          "typeName" : "string",
+	  "isOptional" : false,
           "cardinality" : "SINGLE",
           "valuesMinCount" : 1,
           "valuesMaxCount" : 1,
@@ -157,7 +157,7 @@
         }
        ,{
           "name" : "schema",
-          "typeName" : "array<schema_col>",
+          "typeName" : "array<schema_col_marc>",
           "isOptional" : true,
           "cardinality" : "SINGLE",
           "valuesMinCount" : 1,
